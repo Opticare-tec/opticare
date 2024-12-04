@@ -10,12 +10,12 @@
 </head>
 
 <style>
-  /* Parte del acordeón */
-  .card:hover {
+  /*Parte del acordeon*/
+  .card:hover{
     background-color: #FFC5C5;
     cursor: pointer;
   }
-  .card-body {
+  .card-body{
     background-color: white;
   }
 
@@ -26,28 +26,23 @@
   .header-container input[type="checkbox"] {
     transform: scale(2.5); /* tamaño del checkbox */
     margin-right: 10px; /* espacio entre el checkbox y el texto */
-  }
+  }  
 </style>
 
 <body>
 <header>
   <div style="display: flex; align-items: center; margin: 20px;">
-    <img src="img/logo.png" height="100">
+    <img src="img\logo.png" height="100">
     <h2 style="margin-right: 10px;">Opticare</h2>
   </div>
   <div class="header-container text-center my-4">
     <h1>Términos y Condiciones</h1>
   </div>
 </header>
-
-<!-- Enlaces para abrir secciones -->
-<div style="margin: 20px;">
-  <a href="#collapseOne">Ir a Términos para uso personal</a> |
-  <a href="#collapseTwo">Ir a Política de privacidad</a>
-</div>
+  
 
 <div id="accordion">
-  <div class="card" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+  <div class="card" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">Términos para el uso personal</h5>
     </div>
@@ -57,46 +52,58 @@
         <p>Opticare realiza un servicio de evaluación por medio de imágenes para detectar posibles signos 
         de las formas más comunes de cáncer en la piel.
         En los casos con un riesgo potencial para la detección de esta enfermedad, Opticare le proporcionará 
-        información sobre la enfermedad.</p>
+        información sobre la enfermedad.
+        El objetivo de la evaluación es ayudarle a conocer la salud de su piel y no proporcionarle un diagnóstico 
+        de cáncer de piel ni de ninguna otra posible afección cutánea.</p>
+
         <p>Bajo ningún motivo nuestros servicios sustituyen los de un médico o profesional dermatológico.</p>
+
       </div>
     </div>
   </div>
-
-  <div class="card" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-    <div class="card-header" id="headingTwo">
+  <div class="card" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <div class="card-header" id="headingTwo" >
       <h5 class="mb-0">Política de privacidad y manejo de la información</h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        <h6>Recopilación de su información</h6>
-        <p>Al utilizar OptiCare, podemos recopilar información personal, como su nombre y correo electrónico.</p>
+        <h6>Recopilación de su información</h6> <p>Al utilizar OptiCare, podemos recopilar información personal, 
+        como su nombre y correo electrónico. También recopilamos las imágenes de su piel para realizar la evaluación.</p>
+        <h6>Uso de su información</h6> <p>Las imágenes que usted capture a través de OptiCare serán almacenadas de manera 
+        segura y sólo serán utilizadas por el personal autorizado de OptiCare para realizar la evaluación de piel.</p>
+        <h6>Confidencialidad</h6> <p>Su información y las imágenes que comparta con nosotros se mantendrán estrictamente 
+        confidenciales. No compartiremos ni venderemos su información sin su consentimiento, excepto cuando sea necesario 
+        para cumplir con la ley o en respuesta a algún procedimiento legal.</p>
+        <h6>Seguridad de su información</h6> <p>En OptiCare, tomamos muy en serio la seguridad de su información y hemos 
+        implementado las medidas adecuadas para protegerla. Sin embargo, es importante tener en cuenta que, a pesar de 
+        nuestros esfuerzos, ninguna medida de seguridad es infalible. En el improbable caso de que nuestra base de datos 
+        se vea comprometida por un ataque cibernético o un acceso no autorizado, no asumimos responsabilidad por la pérdida de su información o algún daño que pueda resultar de ello.</p>
       </div>
+    </div>
+  </div>
+  <div class="card" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">Permisos para uso profesional</h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Se agrega como un extra más adelante
+      </div>
+    </div>
+  </div>
+
+  <div class="header-container text-center my-4">
+    <div>
+      <input type="checkbox" class="checkbox">
+      <span class="checkmark"></span>
+      <label>Acepto las condiciones del servicio y la política de privacidad</label> <!--cambio-->
     </div>
   </div>
 </div>
 
-<!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<script>
-  // Abrir automáticamente el acordeón correspondiente al hash de la URL
-  document.addEventListener("DOMContentLoaded", function() {
-    const hash = window.location.hash; // Obtiene el hash (#collapseOne, etc.)
-    if (hash) {
-      const target = document.querySelector(hash); // Busca el elemento correspondiente
-      if (target && target.classList.contains("collapse")) {
-        target.classList.add("show"); // Expande la sección del acordeón
-        const header = document.querySelector(`${hash}-header`);
-        if (header) {
-          header.scrollIntoView(); // Lleva el encabezado a la vista
-        }
-      }
-    }
-  });
-</script>
 
 </body>
 </html>
